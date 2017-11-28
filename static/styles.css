@@ -1,7 +1,7 @@
 .jumbotron {
     text-align: center;
     background-color: rgba(202, 205, 206, 0.411);
-    min-height: 100px;
+    min-height: 75px;
 }
 
 h1 {
@@ -9,18 +9,12 @@ h1 {
 }
 
 
-.panel-heading {
+.panel-title {
     text-align: center;
     font-size: 20px;
     color: black;
 }
 
-#sample-select {
-    text-align: center;
-    background-color: rgba(202, 205, 206, 0.411);
-    font-weight: bold;
-    width: 100%;
-}
 
 #sampleMetadata {
     font-weight: bold;

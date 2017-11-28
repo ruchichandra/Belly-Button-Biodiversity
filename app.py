@@ -74,7 +74,7 @@ def otu():
 # Returns a json dictionary of sample metadata 
 @app.route('/metadata/<sample>')
 def metadata(sample):
-    sample_id = sample.replace("BB_","")
+    sample = sample.replace("BB_","")
 
     metadata = session.query(Samples_Metadata.AGE, Samples_Metadata.BBTYPE, Samples_Metadata.ETHNICITY, Samples_Metadata.GENDER, Samples_Metadata.LOCATION, Samples_Metadata.SAMPLEID).filter_by(SAMPLEID=sample).first()
     metadict = {"AGE":metadata[0],"BBTYPE":metadata[1],"ETHNICITY":metadata[2], "GENDER":metadata[3],"LOCATION":metadata[4],"SAMPLEID":metadata[5]}
@@ -96,29 +96,29 @@ def wfreq(sample):
 @app.route('/samples/<sample>')
 def samples(sample):
 
-    # Create a sample query
+    # Create sample query
     sample_query = "Samples." + sample
 
-    # Create an empty dictionary and list
-    sample_info = {}
+    # Create empty dictionary & lists
+    samples_info = {}
     otu_ids = []
     sample_values = []
 
-    # Create a query 
+    # Grab info
     results = session.query(Samples.otu_id, sample_query).order_by(desc(sample_query))
 
-    # Loop through the results and append otu_ids and sample_values lists
+    # Loop through & append
     for result in results:
         otu_ids.append(result[0])
         sample_values.append(result[1])
 
-    # Add these values to the dictionary
-    sample_info = [{
+    # Add to dictionary
+    samples_info = {
         "otu_ids": otu_ids,
         "sample_values": sample_values
-    }]
+    }
 
-    return jsonify(sample_info)
+    return jsonify(samples_info)
 
 if __name__ == "__main__":
     app.run(debug=True)
