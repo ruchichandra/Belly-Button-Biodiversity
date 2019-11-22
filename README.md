@@ -9,5 +9,5 @@ https://belly-button-biodiversity.herokuapp.com/
 
 
 
-![BellyButtonBiodiversityDashboard](https://github.com/ruchichandra/Belly-Button-Biodiversity/blob/master/BellyButtonBiodiversityDashboard.PNG)
+![BellyButtonBiodiversityDashboard]https://github.com/ruchichandra/Belly-Button-Biodiversity/blob/master/BellyButtonBiodiversityDashboard.PNG)
 
